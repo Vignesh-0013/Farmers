@@ -1,13 +1,155 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    tools:context=".buyactivity">
 
-    <TextView
-        android:id="@+id/helloWorldText"
+    <!-- App Bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:title="DEMOapp"
+        android:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/topSection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="403dp">
+
+        <!-- Crop Details and Price -->
+
+        <!-- Crop Image on the Right -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/middleSection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/topSection"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:gravity="center">
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/middleSection"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Example images -->
+
+            <!-- Add more images as needed -->
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tomato_image"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="503dp" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tomato_image"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="503dp" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="96dp">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, World!"
-        android:textSize="24sp"
-        android:textColor="@android:color/black" />
-</RelativeLayout>
+        android:text="Buy"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="311dp" />
+
+    <EditText
+        android:id="@+id/quantityInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Quantity (kg)"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="48dp"
+        tools:layout_editor_absoluteY="311dp" />
+
+    <ImageView
+        android:id="@+id/cropImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tomato_image"
+        tools:layout_editor_absoluteX="257dp"
+        tools:layout_editor_absoluteY="87dp" />
+
+    <HorizontalScrollView
+        android:layout_width="26dp"
+        android:layout_height="8dp"
+        tools:layout_editor_absoluteX="180dp"
+        tools:layout_editor_absoluteY="576dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/cropName"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:text="Crop Name: Tomato"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <TextView
+        android:id="@+id/cropPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price: $100"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="12dp"
+        tools:layout_editor_absoluteY="138dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

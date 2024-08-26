@@ -14,7 +14,7 @@
         tools:targetApi="31">  <!-- Correct placement of tools:targetApi -->
 
         <!-- HelloWorldActivity declaration -->
-        <activity android:name=".HelloWorldActivity"></activity>
+        <activity android:name=".buyactivity"></activity>
 
         <!-- MainActivity declaration -->
         <activity
